@@ -51,17 +51,17 @@ public class AlunosEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return roles;
     }
 
     @Override
     public @Nullable String getPassword() {
-        return "";
+        return senha;
     }
 
     @Override
     public String getUsername() {
-        return "";
+        return email;
     }
 
     @Override
