@@ -2,6 +2,7 @@ package br.com.keven.spring_boot_essentials.controller;
 
 import br.com.keven.spring_boot_essentials.dto.LoginRequesteDto;
 import br.com.keven.spring_boot_essentials.dto.RegisterRequesteDto;
+import br.com.keven.spring_boot_essentials.dto.TokenResponseDTO;
 import br.com.keven.spring_boot_essentials.exception.BadRequestException;
 import br.com.keven.spring_boot_essentials.service.AuthenticationService;
 import jakarta.validation.Valid;
@@ -25,8 +26,8 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public void register(@RequestBody @Valid LoginRequesteDto loginRequesteDto) throws Exception {
-        authenticationService.login(loginRequesteDto);
+    public TokenResponseDTO register(@RequestBody @Valid LoginRequesteDto loginRequesteDto) throws Exception {
+        return authenticationService.login(loginRequesteDto);
     }
 
 }

@@ -42,9 +42,9 @@ public class AuthenticationService {
         }
 
 
-        RolesEntity role = rolesRepository.findByNome(RoleTypeEnum.ALUNO.name())
+        RolesEntity role = rolesRepository.findByNome(RoleTypeEnum.ROLE_ALUNO.name())
                 .orElseGet(() -> rolesRepository.save(RolesEntity.builder()
-                        .nome(RoleTypeEnum.ALUNO.name())
+                        .nome(RoleTypeEnum.ROLE_ALUNO.name())
                         .build()
                 ));
 

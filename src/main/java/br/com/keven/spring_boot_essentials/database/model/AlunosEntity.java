@@ -33,7 +33,7 @@ public class AlunosEntity implements UserDetails {
 
     private String senha;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "alunos_roles",
         joinColumns = @JoinColumn(name = "aluno_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
