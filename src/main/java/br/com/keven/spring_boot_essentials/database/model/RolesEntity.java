@@ -21,6 +21,6 @@ public class RolesEntity  implements GrantedAuthority {
 
     @Override
     public @Nullable String getAuthority() {
-        return "";
+        return this.getNome();
     }
 }

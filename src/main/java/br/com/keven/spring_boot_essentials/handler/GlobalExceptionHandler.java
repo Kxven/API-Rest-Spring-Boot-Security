@@ -5,6 +5,7 @@ import br.com.keven.spring_boot_essentials.exception.ErrorResponseDTO;
 import br.com.keven.spring_boot_essentials.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -37,6 +38,15 @@ public class GlobalExceptionHandler {
         ErrorResponseDTO response = ErrorResponseDTO.builder()
                 .message(ex.getMessage())
                 .status(HttpStatus.BAD_REQUEST.value())
+                .build();
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+    }
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<ErrorResponseDTO> handlerAccessDeniedException(AccessDeniedException ex){
+        ErrorResponseDTO response = ErrorResponseDTO.builder()
+                .message(ex.getMessage())
+                .status(HttpStatus.FORBIDDEN.value())
                 .build();
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
