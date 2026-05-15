@@ -6,8 +6,9 @@
 ## Descrição
 
 API REST desenvolvida com Spring Boot para gerenciamento de alunos, treinos, exercícios e avaliações físicas.
+A principal mudança desse projeto para o outro é a adição de segurança na API com authenticação pelo Spring Security!
 
-O projeto simula um sistema de academia completo, com foco em aplicação de regras de negócio, organização em camadas, autenticação JWT e controle de acesso baseado em roles.
+O projeto simula um sistema de academia completo, com foco em aplicação de regras de negócio, organização em camadas, autenticação JWT e controle de acesso baseado em roles
 
 ---
 
