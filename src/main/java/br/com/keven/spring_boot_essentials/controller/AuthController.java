@@ -26,7 +26,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public TokenResponseDTO register(@RequestBody @Valid LoginRequesteDto loginRequesteDto) throws Exception {
+    public TokenResponseDTO login(@RequestBody @Valid LoginRequesteDto loginRequesteDto) throws Exception {
         return authenticationService.login(loginRequesteDto);
     }
 
